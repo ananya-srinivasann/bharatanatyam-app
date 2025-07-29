@@ -19,6 +19,8 @@
 
 html {
   box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
 }
 *, *::before, *::after {
   box-sizing: inherit;
@@ -26,6 +28,13 @@ html {
 
 body {
     background-color: peachpuff;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
 }
 
 /* first index page */
@@ -196,6 +205,34 @@ body {
     align-items: start;   /* align items to the start of grid cell --> top alignment */
 }
 
+.mudra-gallery2 {
+    display: grid;
+    width: 100%;
+    /*4 columns */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px; /* Space between grid items */
+    padding: 100px 100px;
+    margin-right: 0px;
+    justify-items: center; /* centers items horizontally inside grid cells */
+    align-items: start;   /* align items to the start of grid cell --> top alignment */
+}
+
+@media (min-width: 1400px) {
+    .mudra-gallery2{
+        margin-right: 40px;
+}
+}
+
+.mudra-type-container2 img {
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover;
+    display: block;
+    border-bottom: 5px solid peachpuff;
+}
+
+
+
 /* polaroid style container */
 .mudra-type-container {
     max-width: 300px; 
@@ -211,15 +248,18 @@ body {
 
 /* img in mudra-type-container */
 .mudra-type-container img {
-    width: 100%; 
-    height: auto;   
+    width: 300px; 
+    height: 300px;   
+    object-fit: cover;
+    object-position: right;
     display: block;  /* removes extra space below img */
     border-bottom: 5px solid white; /* white "border" effect below the image */
 }
 
 .mudra-type-container2 img {
-    width: 100%; 
-    height: auto;   
+    width: 300px; 
+    height: 300px;
+    object-fit: cover;   
     display: block;  /* removes extra space below img */
     border-bottom: 5px solid peachpuff; /* white "border" effect below the image */
 }
@@ -262,6 +302,7 @@ body {
     font-size: clamp(1.2rem, 2.5vw, 1.8rem); /* Responsive font size */
     color: maroon; /* Text color on the red background */
     margin: 0; /* Remove default paragraph margins */
+    width: 300px;
 }
 
 .description-mudra {
@@ -272,6 +313,9 @@ body {
 .description-mudra2 {
     font-family: "Nyata";
     font-size: clamp(1rem, 2vw, 1.4rem);
+    width: 300px;
+    align-items: Center;
+
 }
 
 
@@ -436,12 +480,24 @@ body {
     color: maroon;
     font-family: "Nyata";
     padding: 0px clamp(20px, 20vw, 400px);
+    margin-bottom: clamp(30px, 5vw, 100px);
+}
+
+.sub {
+    color: red;
+    font-size: clamp(10px, 3vw, 20px);
+    font-family: "Nyata";
+    margin-bottom: clamp(10px, 2vw, 20px);
 }
 
 .about-item h1 {
     font-size: clamp(20px, 7vw, 40px);
     color: red;
     font-family: "Sublem";
+}
+
+.about-item h3 {
+    color: red;
 }
 
 .about-item img {
@@ -473,8 +529,9 @@ body {
 
 .thattadavu-item {
     font-family: "Sublem";
-    font-size: clamp(30px, 5vw, 40px);
+    font-size: clamp(25px, 3vw, 40px);
     color: peachpuff;
+    margin-bottom: -20px;
     
 }
 
@@ -582,6 +639,10 @@ body {
         padding: 20px clamp(15px, 4vw, 50px);
     }
 
+
+}
+
+@media (max-width: 950px) {
     .postures-wrong {
         grid-template-columns: 1fr;
     }
@@ -613,12 +674,37 @@ body {
         grid-template-columns: repeat(3, 1fr); /* Change to 3 columns */
         gap: 40px;
         padding: 50px 70px;
+
+    }
+
+}
+
+@media (max-width: 1400px) {
+        .mudra-gallery2 {
+        grid-template-columns: repeat(3, 1fr); /* Change to 3 columns */
+        gap: 40px;
+        padding: 50px 70px;
+
+    }
+}
+@media (max-width: 1100px) {
+        .mudra-gallery2 {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+        padding: 40px 30px;
     }
 }
 
 
-@media (max-width: 600px) { /*breakpoint for 2 column */
+
+@media (max-width: 900px) { /*breakpoint for 2 column */
     .mudra-gallery {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+        padding: 40px 30px;
+    }
+
+    .mudra-gallery2 {
         grid-template-columns: repeat(2, 1fr); 
         gap: 20px;
         padding: 40px 30px;
@@ -626,6 +712,22 @@ body {
 
     .mudras-title {
         font-size: clamp(1rem, 5vw, 1.5rem); /* Adjust mudras title font size */
+    }
+
+    .mudra-type-container2 img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+
+}
+
+@media (max-width: 700px){
+    .mudra-gallery2 {
+        grid-template-columns: repeat(1, 1fr); 
+        gap: 20px;
+        padding: 40px 30px;
     }
 }
 
