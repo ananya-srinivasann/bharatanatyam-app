@@ -37,6 +37,17 @@ body, html {
     padding: 0;
 }
 
+.footer {
+    font-size: 15px;
+    color: maroon;
+    font-family: "Nyata";
+    margin-top: clamp(20px, 5vw, 40px);
+    margin-bottom: clamp(20px, 5vw, 40px);
+    width: 100%;
+    text-align: center;
+    background-color: peachpuff;
+}
+
 /* first index page */
 
 .welcome-text {
@@ -522,10 +533,13 @@ body, html {
     width: 100%; 
     max-width: clamp(500px, 96vw, 2000px); 
     padding: 30px clamp(30px, 6vw, 300px);
+    padding-bottom: clamp(50px, 8vw, 100px);
     border-radius: 10px;
     background-color: maroon;
-    margin-bottom: clamp(10px, 5vw, 50px);
+    
 }
+
+
 
 .thattadavu-item {
     font-family: "Sublem";
@@ -637,6 +651,7 @@ body, html {
 
     .thattadavu-box {
         padding: 20px clamp(15px, 4vw, 50px);
+        padding-bottom: 50px;
     }
 
 
